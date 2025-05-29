@@ -1,0 +1,8 @@
+.clock {
+    width: 7rem;
+    height: 7rem;
+    background-color: #ACBDC3;
+    border-radius: 1rem;
+    color: black;
+    text-align: center;
+}
