@@ -24,14 +24,30 @@ header {
     background-color: #1E201F;
 }
 
-header button {
+header .header-button {
+    background-color: hsl(0, 0%, 72%);
+    color: black;
+    transition: background-color 0.25s ease;
+    border: 2px solid hsl(0, 0%, 97%);
+    border-radius: 5px;
+}
+
+header .header-button:hover {
+    background-color: hsl(0, 0%, 40%);
+}
+
+header .add-student {
     position: absolute;
     top: 50%;
-    left: 12%;
+    left: 4%;
     transform: translateY(-50%);
+}
 
-    background-color: #ACBDC3;
-    color: black;
+header .open-student-list {
+    position: absolute;
+    top: 50%;
+    left: 16%;
+    transform: translateY(-50%);
 }
 
 header h1 {
