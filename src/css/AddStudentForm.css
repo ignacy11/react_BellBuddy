@@ -57,13 +57,13 @@ form {
 
 form button {
     width: 7rem;
-    height: 4rem;
+    height: 3.5rem;
     font-size: 1.3rem;
 
     background-color: hsl(0, 0%, 25%);
     color: white;
     border: 3px solid hsl(0, 0%, 80%);
-    transition: background-color 0.35s ease;
+    transition: background-color 0.25s ease;
 }
 
 form button:hover {

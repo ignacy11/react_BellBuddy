@@ -1,4 +1,5 @@
 import '../css/StudentList.css'
+import StudentItem from './StudentItem'
 
 const StudentList = () => {
     return (
@@ -13,56 +14,7 @@ const StudentList = () => {
                 </thead>
                 <tbody>
                     {/*TODO: StudentListItem components*/}
-                    <tr>
-                        <td>example text</td>
-                        <td>example text</td>
-                        <td><input type="checkbox"/></td>
-                    </tr>
-                    <tr>
-                        <td>example text</td>
-                        <td>example text</td>
-                        <td><input type="checkbox"/></td>
-                    </tr>
-                    <tr>
-                        <td>example text</td>
-                        <td>example text</td>
-                        <td><input type="checkbox"/></td>
-                    </tr>
-                    <tr>
-                        <td>example text</td>
-                        <td>example text</td>
-                        <td><input type="checkbox"/></td>
-                    </tr>
-                    <tr>
-                        <td>example text</td>
-                        <td>example text</td>
-                        <td><input type="checkbox"/></td>
-                    </tr>
-                    <tr>
-                        <td>example text</td>
-                        <td>example text</td>
-                        <td><input type="checkbox"/></td>
-                    </tr>
-                    <tr>
-                        <td>example text</td>
-                        <td>example text</td>
-                        <td><input type="checkbox"/></td>
-                    </tr>
-                    <tr>
-                        <td>example text</td>
-                        <td>example text</td>
-                        <td><input type="checkbox"/></td>
-                    </tr>
-                    <tr>
-                        <td>example text</td>
-                        <td>example text</td>
-                        <td><input type="checkbox"/></td>
-                    </tr>
-                    <tr>
-                        <td>example text</td>
-                        <td>example text</td>
-                        <td><input type="checkbox"/></td>
-                    </tr>
+                <StudentItem/>
                 </tbody>
             </table>
         </>
