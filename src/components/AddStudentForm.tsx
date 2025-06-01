@@ -1,22 +1,32 @@
 import '../css/AddStudentForm.css'
-import {useState} from "react";
+import {useState} from "react"
+import * as React from "react"
+import type {Student} from '../Student.ts'
 
-interface UserForm {
-    firstName: string;
-    lastName: string;
+type FormSubmitHandler = (formData: Student) => void
+interface FormProps {
+    onSubmit: FormSubmitHandler
 }
 
-const AddStudentForm = () => {
-    const [formData, setFormData] = useState<UserForm>({firstName: "", lastName: ""})
+const AddStudentForm = ({ onSubmit }: FormProps) => {
+    const [submittedFormData, setSubmittedFormData] = useState<Student>({
+        firstName: "",
+        lastName: "",
+        studentAttendance: false
+    })
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        const {name, value} = event.target as HTMLInputElement;
-        setFormData((prev) => ({...prev, [name]: value}))
+        const {name, value, type, checked} = event.target as HTMLInputElement
+        setSubmittedFormData((prev) => ({
+            ...prev,
+            [name]: type==="checkbox" ? checked : value
+        }))
     }
 
     function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
         event.preventDefault()
-        console.log(`first name: ${formData.firstName}, last name: ${formData.lastName}`)
+        console.log(`first name: ${submittedFormData.firstName}, last name: ${submittedFormData.lastName}`)
+        onSubmit(submittedFormData)
     }
 
     return (
@@ -28,11 +38,11 @@ const AddStudentForm = () => {
                 <section className="form-fields">
                     <label>
                         <span>Imię</span>
-                        <input type="text" name={"firstName"} value={formData.firstName} onChange={handleChange}/>
+                        <input type="text" name={"firstName"} value={submittedFormData.firstName} onChange={handleChange}/>
                     </label>
                     <label>
                         <span>Nazwisko</span>
-                        <input type="text" name={"lastName"} value={formData.lastName} onChange={handleChange}/>
+                        <input type="text" name={"lastName"} value={submittedFormData.lastName} onChange={handleChange}/>
                     </label>
                 </section>
                 <button className="form-button" type={"submit"}>Dodaj</button>
@@ -41,4 +51,4 @@ const AddStudentForm = () => {
     )
 }
 
-export default AddStudentForm;
+export default AddStudentForm

@@ -1,10 +1,15 @@
-const StudentItem = () => {
+import type {Student} from '../Student.ts'
+
+const StudentItem = ({firstName, lastName}: Student) => {
+
     return (
         <>
             <tr>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>{firstName}</td>
+                <td>{lastName}</td>
+                <td>
+                    <input type="checkbox" name="attendance"/>
+                </td>
             </tr>
         </>
     )
